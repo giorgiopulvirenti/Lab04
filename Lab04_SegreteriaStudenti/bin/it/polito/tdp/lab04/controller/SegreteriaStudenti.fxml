@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
+<BorderPane prefHeight="422.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.controller.SegreteriaStudentiController">
    <top>
       <Label text="Lab3_Segreteria Studenti" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -23,32 +23,33 @@
          <children>
             <HBox spacing="20.0">
                <children>
-                  <Label text="Corsol" />
-                  <ComboBox prefWidth="150.0" />
+                  <Label text="Corso" />
+                  <ComboBox fx:id="comboCorso" prefWidth="150.0" promptText="corsi" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Cerca iscritti corso" />
+            <Button fx:id="btnCercaIscrittiCorso" mnemonicParsing="false" onAction="#doCercaIscrittiCorso" text="Cerca iscritti corso" />
             <HBox spacing="10.0">
                <children>
                   <Label text="Studente:" />
-                  <TextField />
-                  <CheckBox mnemonicParsing="false" />
-                  <TextField promptText="nome" />
-                  <TextField promptText="cognome" />
+                  <TextField fx:id="txtMatricola" />
+                  <CheckBox mnemonicParsing="false" onAction="#doCercaNome" />
+                  <TextField fx:id="txtNome" promptText="nome" />
+                  <TextField fx:id="txtCognome" promptText="cognome" />
                </children>
             </HBox>
             <HBox spacing="450.0">
                <children>
-                  <Button mnemonicParsing="false" text="Cerca corsi" />
-                  <Button mnemonicParsing="false" text="Iscrivi" />
+                  <Button fx:id="btnCercaCorsi" mnemonicParsing="false" onAction="#doCercaCorsi" text="Cerca corsi" />
+                  <Button fx:id="btnIscrivi" mnemonicParsing="false" onAction="#doIscrivi" text="Iscrivi" />
                </children>
             </HBox>
-            <TextArea prefHeight="200.0" prefWidth="200.0" />
-            <Button mnemonicParsing="false" text="Reset">
-               <VBox.margin>
-                  <Insets left="510.0" />
-               </VBox.margin>
-            </Button>
+            <TextArea fx:id="txtResult" prefHeight="200.0" prefWidth="200.0" />
+            <HBox spacing="400.0">
+               <children>
+                  <Button fx:id="btnCerca" mnemonicParsing="false" onAction="#doCerca" text="Cerca" />
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </center>
